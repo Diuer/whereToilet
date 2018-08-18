@@ -231,9 +231,9 @@ function selectCountry(e) {
     arrB = arrA.filter(filterCondition)
     if (arrB.length < 1000) {
         for (var i = 0; i < arrB.length; i++) {
-            // console.log("X: "+arrB[i].Longitude+", Y: "+arrB[i].Latitude)
-            console.log(arrB[i])
-            $('.lists').html($('.lists').html() + '<div class="list"><div class="colorblock"></div><h2>' + arrB[i].Type + '</h2><p class="samesize">' + arrB[i].Address + '</p><p><i class="fa fa-location-arrow" aria-hidden="true"></i><a href="">地圖</a></p><p><i class="fa fa-thumbs-up" aria-hidden="true"></i>' + arrB[i].Grade + '</p><p class="down"><i class="fa fa-address-book-o" aria-hidden="true"></i>' + arrB[i].Administration+'</p></div>')
+            console.log("X: "+arrB[i].Longitude+", Y: "+arrB[i].Latitude)
+            // console.log(arrB[i])
+            $('.lists').html($('.lists').html() + '<div class="list"><div class="colorblock"></div><h2>' + arrB[i].Type + '</h2><p class="samesize">' + arrB[i].Address + '</p><p><i class="fa fa-location-arrow" aria-hidden="true"></i><a target="_blank" href="' +encodeURI("https://www.google.com.tw/maps/place/"+arrB[i].Address)+'">地圖</a></p><p><i class="fa fa-thumbs-up" aria-hidden="true"></i>' + arrB[i].Grade + '</p><p class="down"><i class="fa fa-address-book-o" aria-hidden="true"></i>' + arrB[i].Administration+'</p></div>')
         }
     }
     $('#result').css("border", "2px solid #0080ff")
