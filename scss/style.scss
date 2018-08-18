@@ -2,6 +2,8 @@ $fz1: 24px;
 $fz2: 16px;
 $fm1: 'Roboto', sans-serif;
 $fm2: '微軟正黑體';
+$deepBlue: #0080ff;
+$lightBlue: #C2DFFF;
 
 *{
   /* outline: 1px solid red; */
@@ -29,7 +31,7 @@ clearfix{
 html,body{
   display: flex;
   width: 100%;
-  background-color: rgb(194, 223, 255);
+  background-color: $lightBlue;
 }
 body{
   display: none;
@@ -44,7 +46,7 @@ header{
   z-index: 2;
   font-size: 50px;
   font-family: $fm1;
-  background-color: rgb(194, 223, 255);
+  background-color: $lightBlue;
   cursor: default;
 }
 header p{
@@ -55,7 +57,7 @@ header p{
   height: 80px;
   padding: 20px 0;
   border-radius: 10px;
-  color: #0080ff;
+  color: $deepBlue;
 }
 header:hover{
   cursor: pointer;
@@ -83,7 +85,7 @@ header:hover{
   cursor: pointer;
   border-radius: 10px;
   color: white;
-  background-color: #0080ff;
+  background-color: $deepBlue;
   border: 2px solid rgba(0,0,0,.8);
   transition: all 0.5s;
 }
@@ -94,14 +96,14 @@ header:hover{
   height: 500px;
   padding: 10px;
   margin: 0 20px;
-  border-right: 5px solid #0080ff;
+  border-right: 5px solid $deepBlue;
   border-radius: 4px;
 }
 #menu h2{
   width: 100%;
   font-size: 30px;
   margin:  10px 0;
-  color: #0080ff;
+  color: $deepBlue;
   cursor: default;
 }
 #menu select{
@@ -110,7 +112,7 @@ header:hover{
   width: 150px;
   font-size: 20px;
   line-height: 24px;
-  border: 1px solid #0080ff;
+  border: 1px solid $deepBlue;
   border-radius: 5px;
 }
 #menu select:hover{
@@ -125,13 +127,13 @@ header:hover{
   margin:  5px 0;
   font-size: 20px;
   line-height: 24px;
-  border: 1px solid #0080ff;
+  border: 1px solid $deepBlue;
   border-radius: 5px;
   background-color: #fff;
 }
 #menu .typeChoice:hover{
   cursor: pointer;
-  background-color: #0080ff;
+  background-color: $deepBlue;
   color: white;
   transition: all 0.5s;
 }

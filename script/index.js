@@ -260,9 +260,9 @@ function selectCountry(e) {
 function filterCondition(arr) {
     if ($('.country option:selected').val() != '全縣市') {
         if (window.localStorage.getItem("typeBoy") === "true") {
-            return ($('.country option:selected').val() === arr.Country && $('.typeBoy').attr("data-content") === arr.Type) || "混合廁所" === arr.Type
+            return ($('.country option:selected').val() === arr.Country && $('.typeBoy').attr("data-content") === arr.Type) || ($('.country option:selected').val() === arr.Country && "混合廁所" === arr.Type)
         } else if (window.localStorage.getItem("typeGirl") === "true") {
-            return ($('.country option:selected').val() === arr.Country && $('.typeGirl').attr("data-content") === arr.Type) || "混合廁所" === arr.Type
+            return ($('.country option:selected').val() === arr.Country && $('.typeGirl').attr("data-content") === arr.Type) || ($('.country option:selected').val() === arr.Country && "混合廁所" === arr.Type)
         } else if (window.localStorage.getItem("typeBalence") === "true") {
             return $('.country option:selected').val() === arr.Country && $('.typeBalence').attr("data-content") === arr.Type
         } else if (window.localStorage.getItem("typeKid") === "true") {
