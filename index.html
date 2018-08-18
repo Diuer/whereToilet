@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<head>
+    <title>whereToilet</title>
+    <link rel="stylesheet" href="./style/style.css">
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+    <script src="./script/index.js"></script>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' />
+    <link rel="stylesheet" href='https://fonts.googleapis.com/css?family=Roboto'>
+    <!-- <script src='https://opendata.epa.gov.tw/webapi/api/rest/datastore/355000000I-000467/?format=json&token=CDj7SkMiIUeyJVbXtLHgkg&callback=init'></script> -->
+</head>
+
+<body>
+    <header>
+        <p>whereToilet?</p>
+    </header>
+    <div id="index">
+        <button>Search !</button>
+    </div>
+    <div id="enter">
+        <div id="menu">
+            <h2>I want…</h2>
+            <div id="location">
+                <select class="country" onchange="selectCountry();">
+                    <option value="全縣市" selected="true">全縣市</option>
+                    <option value="臺北市">臺北市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="基隆市">基隆市</option>
+                    <option value="桃園市">桃園市</option>
+                    <option value="新竹市">新竹市</option>
+                    <option value="苗栗縣">苗栗縣</option>
+                    <option value="臺中市">臺中市</option>
+                    <option value="南投縣">南投縣</option>
+                    <option value="彰化縣">彰化縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value="嘉義縣">嘉義縣</option>
+                    <option value="臺南市">臺南市</option>
+                    <option value="高雄市">高雄市</option>
+                    <option value="屏東縣">屏東縣</option>
+                    <option value="臺東縣">臺東縣</option>
+                    <option value="花蓮縣">花蓮縣</option>
+                    <option value="宜蘭縣">宜蘭縣</option>
+                    <option value="澎湖縣">澎湖縣</option>
+                </select>
+            </div>
+            <div id="type">
+                <div data-content="男廁所" name="choice" class="typeChoice typeBoy">
+                    <p>男生廁所</p>
+                </div>
+                <div data-content="女廁所" name="choice" class="typeChoice typeGirl">
+                    <p>女生廁所</p>
+                </div>
+                <div data-content="無障礙廁所" name="choice" class="typeChoice typeBalence">
+                    <p>無障礙廁所</p>
+                </div>
+                <div data-content="親子廁所" name="choice" class="typeChoice typeKid">
+                    <p>親子廁所</p>
+                </div>
+                <div data-content="混合廁所" name="choice" class="typeChoice typeMix">
+                    <p>混合廁所</p>
+                </div>
+            </div>
+            <div id="result">
+                <h2 id="choicetitle"></h2>
+                <p id="resultnumber"></p>
+            </div>
+        </div>
+        <div id="map">
+            MAP
+        </div>
+    </div>
+    <!-- <script src="./script.js"></script> -->
+</body>
+
+</html>

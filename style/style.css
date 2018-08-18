@@ -1,0 +1,196 @@
+:root {
+  --fz1: 24px;
+  --fz2: 16px;
+  --fm: 'Roboto', sans-serif;
+}
+
+* {
+  /* outline: 1px solid red; */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: var(--fm);
+}
+
+clearfix {
+  clear: both;
+}
+
+html, body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  background-color: #c2dfff;
+}
+
+body {
+  display: none;
+}
+
+header {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 90px;
+  z-index: 2;
+  font-size: 50px;
+  font-family: var(--fm);
+  background-color: #c2dfff;
+  cursor: default;
+}
+
+header p {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 80px;
+  padding: 20px 0;
+  border-radius: 10px;
+  color: #0080ff;
+}
+
+header:hover {
+  cursor: pointer;
+}
+
+#index, #enter {
+  display: none;
+  position: relative;
+  top: 100px;
+  width: 100%;
+}
+
+#index {
+  display: block;
+  overflow: hidden;
+}
+
+#index button {
+  color: rgba(0, 0, 0, 0.8);
+  background-color: #97cbff;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  width: 300px;
+  height: 70px;
+  font-size: 40px;
+  margin: 150px calc((100% - 300px)/2);
+}
+
+#index button:hover {
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  background-color: #0080ff;
+  border: 2px solid rgba(0, 0, 0, 0.8);
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#enter #menu {
+  float: left;
+  width: 200px;
+  height: 500px;
+  padding: 10px;
+  margin: 0 20px;
+  border-right: 5px solid #0080ff;
+  border-radius: 4px;
+}
+
+#menu h2 {
+  width: 100%;
+  font-size: 30px;
+  margin: 10px 0;
+  color: #0080ff;
+  cursor: default;
+}
+
+#menu select {
+  margin: 10px 0 5px 0;
+  padding: 0 0 0 30px;
+  width: 150px;
+  font-size: 20px;
+  line-height: 24px;
+  border: 1px solid #0080ff;
+  border-radius: 5px;
+}
+
+#menu select:hover {
+  cursor: pointer;
+}
+
+#menu .typeChoice {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 150px;
+  height: 30px;
+  margin: 5px 0;
+  font-size: 20px;
+  line-height: 24px;
+  border: 1px solid #0080ff;
+  border-radius: 5px;
+  background-color: #fff;
+}
+
+#menu .typeChoice:hover {
+  cursor: pointer;
+  background-color: #0080ff;
+  color: white;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+#menu input {
+  width: 20px;
+  height: 15px;
+}
+
+#menu #result {
+  margin: 50px 0;
+  font-size: 20px;
+  line-height: 24px;
+  border: 0px;
+  border-radius: 10px;
+  width: 150px;
+  padding: 10px 16px;
+  cursor: default;
+}
+
+#resultnumber span {
+  color: red;
+}
+
+#enter #map {
+  float: left;
+  width: calc(100% - 240px);
+  padding: 10px;
+}
+
+#enter #map::after {
+  clear: both;
+}
+/*# sourceMappingURL=style.css.map */
