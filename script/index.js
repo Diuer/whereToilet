@@ -1,4 +1,3 @@
-
 var arrA = [] // origin array
 var arrB = [] // filtered array
 // window.onload=function(){
@@ -11,16 +10,16 @@ $(document).ready(function () {
         jsonpCallback: "callback", //callback函式(jsonp的callback函式，預設是callback)
         success: function (response) {
             //jQuery會自動將結果傳入(如果有設定callback函式的話，兩者都會執行)
+            window.localStorage.setItem("typeBoy", "false")
+            window.localStorage.setItem("typeGirl", "false")
+            window.localStorage.setItem("typeBalence", "false")
+            window.localStorage.setItem("typeKid", "false")
+            window.localStorage.setItem("typeMix", "false")
+            window.localStorage.setItem("total", 0)
             while (true) {
                 for (var i = 0; i < response.result.records.length; i++) {
                     arrA[i] = response.result.records[i]
                 }
-                window.localStorage.setItem("typeBoy", "false")
-                window.localStorage.setItem("typeGirl", "false")
-                window.localStorage.setItem("typeBalence", "false")
-                window.localStorage.setItem("typeKid", "false")
-                window.localStorage.setItem("typeMix", "false")
-                window.localStorage.setItem("total", 0)
                 if (response.success) {
                     console.log(response.success)
                     $('body').css("display", "block")
@@ -61,6 +60,8 @@ $(document).ready(function () {
         }
         if (window.localStorage.getItem("typeBoy") === "true") {
             window.localStorage.setItem("typeBoy", "false")
+            $('#type .typeBoy').css("background-color", "white")
+            $('#type .typeBoy').css("color", "black")
             window.localStorage.setItem("total", parseInt(window.localStorage.getItem("total")) - 1)
             selectCountry()
         } else {
@@ -91,6 +92,8 @@ $(document).ready(function () {
         }
         if (window.localStorage.getItem("typeGirl") === "true") {
             window.localStorage.setItem("typeGirl", "false")
+            $('#type .typeGirl').css("background-color", "white")
+            $('#type .typeGirl').css("color", "black")
             window.localStorage.setItem("total", parseInt(window.localStorage.getItem("total")) - 1)
             selectCountry()
         } else {
@@ -121,6 +124,8 @@ $(document).ready(function () {
         }
         if (window.localStorage.getItem("typeBalence") === "true") {
             window.localStorage.setItem("typeBalence", "false")
+            $('#type .typeBalence').css("background-color", "white")
+            $('#type .typeBalence').css("color", "black")
             window.localStorage.setItem("total", parseInt(window.localStorage.getItem("total")) - 1)
             selectCountry()
         } else {
@@ -153,6 +158,8 @@ $(document).ready(function () {
         }
         if (window.localStorage.getItem("typeKid") === "true") {
             window.localStorage.setItem("typeKid", "false")
+            $('#type .typeKid').css("background-color", "white")
+            $('#type .typeKid').css("color", "black")
             window.localStorage.setItem("total", parseInt(window.localStorage.getItem("total")) - 1)
             selectCountry()
         } else {
@@ -183,6 +190,8 @@ $(document).ready(function () {
         }
         if (window.localStorage.getItem("typeMix") === "true") {
             window.localStorage.setItem("typeMix", "false")
+            $('#type .typeMix').css("background-color", "white")
+            $('#type .typeMix').css("color", "black")
             window.localStorage.setItem("total", parseInt(window.localStorage.getItem("total")) - 1)
             selectCountry()
         } else {
@@ -218,10 +227,13 @@ var countryCity = {
 }
 
 function selectCountry(e) {
+    $('.lists').html("")
     arrB = arrA.filter(filterCondition)
     if (arrB.length < 1000) {
         for (var i = 0; i < arrB.length; i++) {
             // console.log("X: "+arrB[i].Longitude+", Y: "+arrB[i].Latitude)
+            console.log(arrB[i])
+            $('.lists').html($('.lists').html() + '<div class="list"><div class="colorblock"></div><h2>' + arrB[i].Type + '</h2><p class="samesize">' + arrB[i].Address + '</p><p><i class="fa fa-location-arrow" aria-hidden="true"></i><a href="">地圖</a></p><p><i class="fa fa-thumbs-up" aria-hidden="true"></i>' + arrB[i].Grade + '</p><p class="down"><i class="fa fa-address-book-o" aria-hidden="true"></i>' + arrB[i].Administration+'</p></div>')
         }
     }
     $('#result').css("border", "2px solid #0080ff")
