@@ -233,7 +233,7 @@ function selectCountry(e) {
         for (var i = 0; i < arrB.length; i++) {
             console.log("X: "+arrB[i].Longitude+", Y: "+arrB[i].Latitude)
             // console.log(arrB[i])
-            $('.lists').html($('.lists').html() + '<div class="list"><div class="colorblock"></div><h2>' + arrB[i].Type + '</h2><p class="samesize">' + arrB[i].Address + '</p><p><i class="fa fa-location-arrow" aria-hidden="true"></i><a target="_blank" href="' +encodeURI("https://www.google.com.tw/maps/place/"+arrB[i].Address)+'">地圖</a></p><p><i class="fa fa-thumbs-up" aria-hidden="true"></i>' + arrB[i].Grade + '</p><p class="down"><i class="fa fa-address-book-o" aria-hidden="true"></i>' + arrB[i].Administration+'</p></div>')
+            $('.lists').html($('.lists').html() + '<div class="list"><div class="colorblock"><p>'+arrB[i].Type+'</p></div><h3>' + arrB[i].Type2 + '</h3><p class="samesize">' + arrB[i].Address + '</p><p><i class="fa fa-location-arrow" aria-hidden="true"></i><a target="_blank" href="' + encodeURI("http://maps.google.com/?q=" + arrB[i].Latitude + "," + arrB[i].Longitude) +'">地圖</a></p><p><i class="fa fa-thumbs-up" aria-hidden="true"></i>' + arrB[i].Grade + '</p><p class="down"><i class="fa fa-address-book-o" aria-hidden="true"></i>' + arrB[i].Administration+'</p></div>')
         }
     }
     $('#result').css("border", "2px solid #0080ff")
@@ -260,9 +260,9 @@ function selectCountry(e) {
 function filterCondition(arr) {
     if ($('.country option:selected').val() != '全縣市') {
         if (window.localStorage.getItem("typeBoy") === "true") {
-            return $('.country option:selected').val() === arr.Country && $('.typeBoy').attr("data-content") === arr.Type
+            return ($('.country option:selected').val() === arr.Country && $('.typeBoy').attr("data-content") === arr.Type) || "混合廁所" === arr.Type
         } else if (window.localStorage.getItem("typeGirl") === "true") {
-            return $('.country option:selected').val() === arr.Country && $('.typeGirl').attr("data-content") === arr.Type
+            return ($('.country option:selected').val() === arr.Country && $('.typeGirl').attr("data-content") === arr.Type) || "混合廁所" === arr.Type
         } else if (window.localStorage.getItem("typeBalence") === "true") {
             return $('.country option:selected').val() === arr.Country && $('.typeBalence').attr("data-content") === arr.Type
         } else if (window.localStorage.getItem("typeKid") === "true") {
@@ -274,9 +274,9 @@ function filterCondition(arr) {
         }
     } else {
         if (window.localStorage.getItem("typeBoy") === "true") {
-            return $('.typeBoy').attr("data-content") === arr.Type
+            return $('.typeBoy').attr("data-content") === arr.Type || "混合廁所" === arr.Type
         } else if (window.localStorage.getItem("typeGirl") === "true") {
-            return $('.typeGirl').attr("data-content") === arr.Type
+            return $('.typeGirl').attr("data-content") === arr.Type || "混合廁所" === arr.Type
         } else if (window.localStorage.getItem("typeBalence") === "true") {
             return $('.typeBalence').attr("data-content") === arr.Type
         } else if (window.localStorage.getItem("typeKid") === "true") {

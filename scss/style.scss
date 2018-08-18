@@ -16,6 +16,12 @@ i{
   width: 20px;
   color: #444;
 }
+a{
+  color: black;
+}
+a:hover{
+  color: #FF5511;
+}
 clearfix{
   clear: both;
 }
@@ -160,7 +166,7 @@ header:hover{
   height: 100%;
   left: 240px;
   float: left;
-  width: calc(100vw - 240px);
+  width: calc(100% - 240px);
   height: calc(100vh - 590px);
   // top: 50px;
   // margin: 100px calc((100vw - 650px)/2);
@@ -177,14 +183,14 @@ header:hover{
 .list {
   position: relative;
   display: inline-block;
-  width: 180px;
-  height: 240px;
+  width: 190px;
+  height: 250px;
   margin: 5px;
   border: 1px solid transparent;
   border-radius: 5px;
   background-color: #FFFFBB;
   font-family: $fm2;
-
+  cursor: default;
 }
 
 .list p{
@@ -195,10 +201,10 @@ header:hover{
   line-height: 20px;
 }
 
-.list h2{
+.list h3{
   position: relative;
   margin: 5px 10px;
-  height: 24px;
+  height: 53px;
 }
 .list .samesize{
   position: relative;
@@ -207,7 +213,7 @@ header:hover{
 .list .down{
   position: absolute;
   bottom: 0;
-  height: 60px;
+  height: 40px;
 }
 
 .colorblock {
@@ -236,7 +242,7 @@ header:hover{
       -ms-flex-align: center;
           align-items: center;
   margin: auto 2px;
-  width: 20px;
+  // width: 20px;
   height: 100%;
 }
 
